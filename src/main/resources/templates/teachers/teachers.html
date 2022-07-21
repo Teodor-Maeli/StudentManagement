@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>teachers</title>
+    <link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body style="background-color: #c8e6e0" class="all-classes-container">
+<div class="btn-group">
+    <button class="GFG"
+            onclick="window.location.href = 'https://localhost:443/index';">
+        RETURN TO MAIN
+    </button>
+</div>
+<table class="all-table">
+    <thread class="thread-color">
+        <th scope="row">id</th>
+        <th scope="row">name</th>
+        <th scope="row">degree</th>
+    </thread>
+    <tbody>
+    <tr th:each="TeacherResponse: ${teachers}">
+        <td th:text="${TeacherResponse.id}"></td>
+        <td th:text="${TeacherResponse.name}"></td>
+        <td th:text="${TeacherResponse.degree}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

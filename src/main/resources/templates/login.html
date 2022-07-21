@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link href="/css/login.css" th:href="@{/css/login.css}" rel="stylesheet" media="screen"/>
+</head>
+<body style="background-color: #c8e6e0" class="all-classes-container">
+<div class="login-form">
+    <form name="login" method="POST" action="login">
+        <table>
+            <tr>
+                <td>User:</td>
+                <td><input type='text' name='username' value=''></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type='password' name='password'/></td>
+            </tr>
+            <tr>
+                <td>Remember me?:</td>
+                <td><input type='checkbox' id="remember-me" name='remember-me'/></td>
+            </tr>
+            <tr class="submit-btn">
+                <td><input name="submit" type="submit" value="SUBMIT"/></td>
+            </tr>
+        </table>
+        <input
+                type="hidden"
+                th:name="${_csrf.parameterName}"
+                th:value="${_csrf.token}"/>
+    </form>
+</div>
+<div class="btn-group">
+    <button class="GFG"
+            onclick="window.location.href = 'https://localhost:443/register';">
+        REGISTER
+    </button>
+</div>
+</body>
+</html>

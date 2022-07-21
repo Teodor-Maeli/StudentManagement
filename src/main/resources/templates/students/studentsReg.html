@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add CSS and JS to Thymeleaf</title>
+    <link href="/css/registration.css" th:href="@{/css/registration.css}" rel="stylesheet" />
+</head>
+<body style="background-color: #c8e6e0"class="all-classes-container">
+<div class="btn-group">
+    <button class="GFG"
+            onclick="window.location.href = 'https://localhost:443/index';">
+        RETURN TO MAIN
+    </button>
+</div>
+<div class="register-form">
+    <form name="students" method="POST" action="/register/students">
+        <table>
+            <tr>
+                <td>Student name:</td>
+                <td><input type='text' name='name' value=''></td>
+            </tr>
+            <tr>
+                <td> age:</td>
+                <td><input type='number' name='age' value=''></td>
+            </tr>
+            <tr>
+                <td>Username:</td>
+                <td><input type='text' name='username' value=''></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type='text' name='password' value=''></td>
+            </tr>
+            <tr>
+                <td><input name="submit" type="submit" value="SUBMIT"/></td>
+            </tr>
+        </table>
+        <input
+                type="hidden"
+                th:name="${_csrf.parameterName}"
+                th:value="${_csrf.token}"/>
+    </form>
+</div>
+
+</body>
+</html>
